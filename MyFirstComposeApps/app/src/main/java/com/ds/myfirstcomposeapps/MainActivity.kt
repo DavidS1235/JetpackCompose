@@ -7,11 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.ds.myfirstcomposeapps.ui.theme.Greeting
+import com.ds.myfirstcomposeapps.components.layout.MyBox
+import com.ds.myfirstcomposeapps.login.Greeting
 import com.ds.myfirstcomposeapps.ui.theme.MyFirstComposeAppsTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,10 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    MyBox()
                 }
             }
         }
