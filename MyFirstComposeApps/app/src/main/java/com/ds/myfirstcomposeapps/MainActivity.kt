@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.ds.myfirstcomposeapps.components.layout.Challenge2
+import com.ds.myfirstcomposeapps.components.layout.ConstraintChain
 import com.ds.myfirstcomposeapps.login.Greeting
 import com.ds.myfirstcomposeapps.ui.theme.MyFirstComposeAppsTheme
 
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Challenge2(Modifier.padding(innerPadding))
+                    ConstraintChain(Modifier.padding(innerPadding))
                 }
             }
         }
