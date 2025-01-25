@@ -14,9 +14,26 @@ import androidx.compose.ui.Modifier
 //by State property works as Lombok get/set, so no need to explicit .getValue
 fun MyState(modifier: Modifier) {
     var number by rememberSaveable() { mutableIntStateOf(0) }
-    Column {
-        Text("Pulsame: ${number}", Modifier.clickable { number += 1 })
-        Text("Pulsame: ${number}", Modifier.clickable { number += 1 })
+
+
+
+    Column(modifier = modifier) {
+        StateExample1(number) {
+            number += 1
+        }
+        StateExample2(number = number, onClick = {
+            number += 1
+        })
     }
 
+}
+
+@Composable
+fun StateExample1(number: Int, onClick: () -> Unit) {
+    Text("Pulsame: ${number}", Modifier.clickable { onClick() })
+}
+
+@Composable
+fun StateExample2(number: Int, onClick: () -> Unit) {
+    Text("Pulsame: ${number}", Modifier.clickable { onClick() })
 }
